@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <div class="breadcrumb-title">
+                <h2>FAQ</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel-group" id="accordion">
+                <div class="row">
+                    <div *ngFor="let item of faq_list" class="col-md-6">
+                        <div class="panel faq-accordion mb-20">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse"
+                                        [attr.data-target]="'#collapseTwo_'+ item.id" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        {{item.question}}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo_{{item.id}}" class="panel-collapse collapse"
+                                aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="panel-body">
+                                    <p>{{item.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="comment-form">
+                <h3>Ask Question</h3>
+                <form [formGroup]="form" action="#">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div *ngIf="token == null" class="leave-form">
+                                <input placeholder="Name *" formControlName="name" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="leave-form">
+                                <textarea placeholder="Your question" formControlName="question"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-submit">
+                        <input type="submit" (click)="send()" value="Add question">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

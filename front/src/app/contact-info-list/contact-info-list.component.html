@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <div class="breadcrumb-title">
+                <h2>Contact info List</h2>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="container">
+    <div class="row">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of contact_list.results">
+            <td>{{item.id}}</td>
+            <td *ngIf="item.name != null">{{item.name.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.message}}</td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="pro-pagination-style mt-30 text-center">
+    <ul>
+        <li *ngIf="contact_list.previous" class="page-item"><a class="page-link" (click)="prev_page()"><</a></li>
+        <li class="page-item"><a class="page-link">{{page}}</a></li>
+        <li *ngIf="contact_list.next" class="page-item"><a class="page-link" (click)="next_page()">></a></li>
+    </ul>
+</div>

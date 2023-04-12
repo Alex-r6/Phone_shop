@@ -1,0 +1,124 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Main <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf="token==null">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item"*ngIf="token==null">
+          <a class="nav-link" routerLink="/registration">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bin">Bin</a>
+        </li>
+        <li class="nav-item" *ngIf="token!=null">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="token!=null">
+          <a class="nav-link" routerLink="/order/list">Order List</a>
+        </li>
+        <li class="nav-item" *ngIf="token!=null && profile && profile.role.id == 3" >
+          <a class="nav-link" routerLink="/order/list/manager" >Order List Manager</a>
+        </li>
+        <li class="nav-item" *ngIf="token!=null && profile && profile.role.id == 3" >
+          <a class="nav-link" routerLink="/manager/comments">Manager comments</a>
+        </li>
+        <li class="nav-item" *ngIf="token!=null" >
+          <a class="nav-link" routerLink="/desire/goods">Desired Goods</a>
+        </li>
+        <li class="nav-item" *ngIf="token!=null" >
+          <a class="nav-link" routerLink="/product/comparison">Product Comparison</a>
+        </li>
+        <button type="button" class="btn btn-danger" (click)="log_out()" *ngIf="token!=null">Log out</button>
+      </ul>
+    </div>
+  </nav> -->
+
+  <div class="header-middle section-padding-2">
+    <div class="container-fluid">
+        <div class="header-ptb">
+            <div class="row align-items-center">
+                <div class="col-xl-4 col-lg-5">
+                    <div class="header-cll">
+                        <span> <i class="fa fa-mobile"></i> +555-55-55</span>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-2">
+                    <div class="logo logo-res-lg text-center">
+                        <a routerLink="">
+                            <img src="assets/assets/images/logo/logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="header-right-wrap header-right-flex">
+                        <div class="same-style same-style-mrg-dec">
+                            <a routerLink="/desire/goods"><i class="fa fa-heart-o"></i></a>
+                        </div>
+                        <div class="same-style same-style-mrg-dec">
+                            <a class="cart-active"  routerLink="/bin"><i class="fa fa-cart-arrow-down"></i></a>
+                        </div>
+                        <div class="same-style same-style-mrg-dec">
+                            <a class="clickalbe-button-active" routerLink="/product/comparison"><i class="fa fa-compress" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom" style="margin-bottom:110px;">
+  <div class="container">
+      <div class="row no-gutters hb-negative-mrg">
+          <div class="col-lg-3">
+              <div class="category-menu-wrap bg-theme-color-yellow">
+                  <h3 class="showcat"><a routerLink=""> Main</a></h3>
+              </div>
+          </div>
+          <div class="col-lg-9">
+              <div class="main-menu menu-lh-1 main-menu-padding-1 bg-blue menu-text-white main-menu-padding1">
+                  <nav>
+                      <ul>
+                        <li *ngIf="token!=null">
+                          <a routerLink="/profile">Profile</a>
+                        </li>
+                        <li *ngIf="token==null">
+                          <a routerLink="/login">Login</a>
+                        </li>
+                        <li *ngIf="token==null">
+                          <a routerLink="/registration" >Registation</a>
+                        </li>
+                        <li *ngIf="token!=null">
+                          <a routerLink="/order/list">Order List</a>
+                        </li>
+                        <li *ngIf="token!=null">
+                          <a routerLink="/blog">Blog</a>
+                        </li>
+                        <li>
+                          <a routerLink="/contact">Contact Us</a>
+                        </li>
+                        <li *ngIf="token!=null">
+                          <a routerLink="/faq">Faq</a>
+                        </li>
+                        <li><a *ngIf="token!=null && profile && profile.role.id == 3" >Manager</a>
+                          <ul class="sub-menu-width">
+                              <li><a routerLink="/order/list/manager">Order List Manager</a></li>
+                              <li><a routerLink="/manager/comments">Manager comments</a></li>
+                              <li><a routerLink="/contact/info/list">Contact info list</a></li>
+                              <li><a routerLink="/faq/list/manager">Faq list</a></li>
+                          </ul>
+                      </li> 
+                      <button type="button" class="btn btn-danger" (click)="log_out()" *ngIf="token!=null">Log out</button>  
+                      </ul>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

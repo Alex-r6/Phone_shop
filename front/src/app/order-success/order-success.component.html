@@ -1,0 +1,101 @@
+<app-header></app-header>
+<!-- <div class="container">
+        <h2>Сongratulations</h2>
+        <h1>Your order has been placed</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngIf="order">
+                    <h3>Contact info</h3>
+                    <p>Fio: {{order.fio}}</p>
+                    <p>Phone: {{order.phone}}</p>
+                    <p>Address: {{order.address}}</p>
+                    <p>Status: {{order.status.name}}</p>
+                </div>
+            </div>
+            <div *ngIf="elem_order">
+                <h3>Order info</h3>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of elem_order">
+                        <td>{{item.product.name}}</td>
+                        <td>{{item.count}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger" (click)="delete(order.id)">Delete</button>
+</div> -->
+
+
+
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+  <div class="container-fluid">
+      <div class="breadcrumb-content text-center">
+          <div class="breadcrumb-title">
+              <h2>Checkout </h2>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="checkout-wrap pt-30">
+      <div class="row">
+          <div class="col-lg-7">
+              <div class="billing-info-wrap mr-50">
+                  <h3>Billing Details</h3>
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                          <div class="billing-info mb-20">
+                              <label>First Name</label>
+                              <input type="text" value="{{order.fio}}">
+                          </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                          <div class="billing-info mb-20">
+                              <label>Phone</label>
+                              <input type="text" value="{{order.phone}}">
+                          </div>
+                      </div>
+                      <div class="col-lg-12">
+                          <div class="billing-info mb-20">
+                              <label>Address</label>
+                              <input type="text" value="{{order.address}}">
+                          </div>
+                      </div>
+                  </div>                 
+              </div>
+          </div>
+          <div class="col-lg-5">
+              <div class="your-order-area">
+                  <h3>Your order</h3>
+                  <div class="your-order-wrap gray-bg-4">
+                      <div class="your-order-info-wrap">
+                          <div class="your-order-info">
+                              <ul>
+                                  <li>Product <span>Quantity</span></li>
+                              </ul>
+                          </div>
+                          <div class="your-order-middle">
+                              <ul *ngFor="let item of elem_order">
+                                  <li>{{item.product.name}}<span>{{item.count}}</span></li>
+                                  <li style="color:red;">Total <span>{{item.product.price * item.count}} </span></li>
+                                </ul>
+                              </div>
+                              <h2>Total</h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<button type="button" class="btn btn-danger" (click)="delete(order.id)">Delete</button>
+</div>

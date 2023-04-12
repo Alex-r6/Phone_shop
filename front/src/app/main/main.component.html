@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Search</label>
+          <input type="email" class="form-control" formControlName="search" (change)="search()"
+            aria-describedby="emailHelp" placeholder="Print">
+        </div>
+        <div>
+          <button type="submit" style="margin-bottom:20px;" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-12">
+      <div class="product-area pb-115">
+        <div class="container">
+          <div class="section-title-2 text-center mb-30">
+            <h2>Categories</h2>
+          </div>
+        </div>
+        <div class="section-padding-1">
+          <div class="container-fluid">
+            <div class="product-tab-list nav mb-60">
+              <a *ngFor="let item of category" class="active" (click)="getProductFilterByCategory(item.id)"
+                data-toggle="tab">
+                {{item.name}}
+              </a>
+              <button (click)="clear()" type="button" class="btn btn-secondary">Clear</button>
+            </div>
+            <div class="tab-content jump padding-55-row-col">
+              <div id="product-1" class="tab-pane active">
+                <div class="row">
+                  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let item of list.results">
+                    <div class="product-wrap mb-55">
+                      <div class="product-img pro-theme-color-border product-border mb-25">
+                        <a href="product-details.html">
+                          <img *ngIf="item.img" src="{{baseurl}}/media/{{item.img}}" width="300px" height="200px">
+                          <img *ngIf="item.img == null" src="assets/default_product.png" width="300px" height="200px">
+                        </a>
+                        <span class="badge-green badge-right-20 badge-top-20 badge-ptb-1">NEW</span>
+                        <div class="product-action product-action-position-1 pro-action-theme-color">
+                          <a title="Add to Cart" (click)="add_to_basket(item)"><i class="fa fa-cart-arrow-down"></i></a>
+                          <a data-toggle="modal" data-target="#exampleModal" routerLink="/info/phone/{{item.id}}"><i
+                              class="fa fa-search-plus"></i></a>
+                          <a title="Add to Wishlist" (click)="desire_goods(item)"><i class="fa fa-heart-o"></i></a>
+                          <a title="Add to Compare" (click)="compare_goods(item)"><i class="fa fa-compress"></i></a>
+                        </div>
+                      </div>
+                      <div class="product-content">
+                        <h4><a href="product-details.html">{{item.name}}</a></h4>
+                        <div class="product-price">
+                          <span class="new-price">$ {{item.price}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pro-pagination-style mt-30 text-center">
+                <ul>
+                  <!-- <li *ngIf="list.previous" class="page-item"><a class="page-link" (click)="prev()">Previous</a></li> -->
+                  <!-- <li class="page-item"><a class="page-link">{{page}}</a></li>
+                  <li *ngIf="list.next" class="page-item"><a class="page-link" (click)="next()">Next</a></li> -->
+                    <li *ngIf="list.previous" class="page-item"><a class="page-link" (click)="prev()"><</a></li>
+                    <li class="page-item"><a class="page-link">{{page}}</a></li>
+                    <li *ngIf="list.next" class="page-item"><a class="page-link" (click)="next()">></a></li>
+                </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="brand-logo-area pt-100 pb-100 section-padding-3">
+        <div class="container-fluid">
+          <div class="section-title-3 st-bg-white st-mrg-botton text-center">
+            <h2>Shop by hot brand</h2>
+          </div>
+          <div class="round-border-1 brand-logo-ptb">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let item of logo_img">
+                  <img src="{{baseurl}}/media/{{item.img}}" alt="" height="150px">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="banner-area pt-50 pb-85">
+          <div class="container">
+            <div class="row">
+              <div *ngFor="let item of banner" class="banner-wrap banner-zoom mb-30">
+                <div class="banner-img">
+                  <a href="product-details.html"><img src="{{baseurl}}/media/{{item.img}}"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li *ngIf="list.previous" class="page-item"><a class="page-link" (click)="prev()">Previous</a></li>
+    <li class="page-item"><a class="page-link">{{page}}</a></li>
+    <li *ngIf="list.next" class="page-item"><a class="page-link" (click)="next()">Next</a></li>
+  </ul>
+</nav> -->
+
+

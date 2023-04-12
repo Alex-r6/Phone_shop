@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <div class="breadcrumb-title">
+                <h2>Chat</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div  class="review-wrapper">
+                <div *ngFor="let item of chat_list" class="single-review">
+                    <div class="review-content">
+                        <div class="review-top-wrap">
+                            <div class="review-name">
+                                <h5 *ngIf="item.name != null">{{item.name.username}}</h5>
+                                <h5 *ngIf="item.name == null">{{item.form_name}}</h5>
+                            </div>
+                        </div>
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="ratting-form-wrapper">
+                <h4>Chat here</h4>
+                <div class="ratting-form">
+                    <form [formGroup]="form" action="#" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div *ngIf="token == null" class="col-lg-3 col-md-12">
+                                <div class="rating-form-style mb-20">
+                                    <label>Name <span>*</span></label>
+                                    <input type="text" formControlName="form_name">
+                                </div>
+                            </div>  
+                            <div class="col-md-12">
+                                <div class="rating-form-style mb-20">
+                                    <label>Your Review <span>*</span></label>
+                                    <textarea name="Your Review" formControlName="text"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-submit">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

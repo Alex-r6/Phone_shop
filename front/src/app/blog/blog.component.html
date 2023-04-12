@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <div class="breadcrumb-title">
+                <h2> Blog</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blog-area pt-120 pb-120">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="main-blog-wrap">
+                    <div *ngFor="let item of articles_list" class="blog-wrap-4">
+                        <div class="blog-img-4">
+                            <a href="blog-details.html">
+                                <img src="{{baseurl}}/media/{{item.img}}" alt="blog">
+                            </a>
+                            <span>{{item.category.name}}</span>
+                        </div>
+                        <div class="blog-content-4">
+                            <h3><a>{{item.title}}</a></h3>
+                            <div class="blog-meta-4">
+                                <ul>
+                                    <li><a href="#">by {{item.author.username}}</a></li>
+                                    <li>-</li>
+                                    <li><a>{{item.date}}</a></li>
+                                </ul>
+                            </div>
+                            <p>{{item.description}}</p>
+                            <div class="blog-btn-2 btn-hover">
+                                <a class="bg-black-hover" routerLink="/blog/details/{{item.id}}">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="sidebar-widget mt-60 mb-55">
+                    <h4 class="pro-sidebar-title2">Categories </h4>
+                    <div class="sidebar-widget-list-2 mt-25">
+                        <ul *ngFor="let item of category_list">
+                            <li><a (click)="getArticleByCategory(item.id)">{{item.name}}</a> <span>{{item.quantity}}</span></li>
+                            <!-- <li><a href="#">Technology</a> <span>(08)</span></li>
+                            <li><a href="#">Photography</a> <span>(06)</span></li>
+                            <li><a href="#">Cafe</a> <span>(17)</span></li>
+                            <li><a href="#">Travel</a> <span>(9)</span></li>
+                            <li><a href="#">Games</a> <span>(14)</span></li>
+                            <li><a href="#">Story love</a> <span>(11)</span></li> -->
+                        </ul>
+                        <br>
+                        <div class="blog-btn-2 btn-hover">
+                            <a class="bg-black-hover" (click)="clear()">Clear List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

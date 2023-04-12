@@ -1,0 +1,88 @@
+<app-header></app-header>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h3>User Profile</h3>
+            <div *ngIf="profile">
+                <img src="{{baseurl}}/media/{{profile.img}}">
+                <p>Nickname: {{profile.nickname}}</p>
+                <p>Phone: {{profile.phone}}</p>
+                <p>Viber: {{profile.viber}}</p>
+                <p>Telegram: {{profile.telegram}}</p>
+                <p>Role: {{profile.role.name}}</p>
+          </div>
+        </div>
+        <div class="col-md-7">
+            <form [formGroup]="form" (ngSubmit)="update()">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nickname</label>
+              <input type="email" class="form-control" formControlName="nickname" placeholder="Enter nickname">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Phone</label>
+              <input type="text" class="form-control" formControlName="phone" placeholder="Enter phone">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Viber</label>
+              <input type="text" class="form-control" formControlName="viber" placeholder="Enter viber">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Telegram</label>
+              <input type="text" class="form-control" formControlName="telegram" placeholder="Enter telegram">
+            </div>
+            <div class="form-group">
+                <img style="width: 200px" [src]="imageUrl" alt="">
+                <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target)">
+              </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+  <div class="container-fluid">
+    <div class="breadcrumb-content text-center">
+      <div class="breadcrumb-title">
+        <h2>My Account</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div *ngIf="profile">
+      <img src="{{baseurl}}/media/{{profile.img}}" width="250px">
+    </div>
+    <div class="col-md-9">
+      <div class="account-details-form">
+        <form [formGroup]="form" (ngSubmit)="update()">
+          <div class="single-input-item">
+            <label for="first-name" class="required">Nickname</label>
+            <input type="text" id="first-name" formControlName="nickname">
+          </div>
+          <div class="single-input-item">
+            <label for="first-name" class="required">Phone</label>
+            <input type="text" id="first-name" formControlName="phone">
+          </div>
+          <div class="single-input-item">
+            <label for="first-name" class="required">Viber</label>
+            <input type="text" id="first-name" formControlName="viber">
+          </div>
+          <div class="single-input-item">
+            <label for="first-name" class="required">Telegram</label>
+            <input type="text" id="first-name" formControlName="telegram">
+          </div>
+          <div class="form-group" style="margin-top:30px;">
+            <img style="width: 200px" [src]="imageUrl" alt="">
+            <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target)">
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

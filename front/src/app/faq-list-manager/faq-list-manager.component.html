@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <div class="breadcrumb-title">
+                <h2>Faq List</h2>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Visible</th>
+                <th>Name</th>
+                <th>Give answer</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of faq_list.results">
+            <td>{{item.id}}</td>
+            <td>{{item.question}}</td>
+            <td>{{item.answer}}</td>
+            <td>{{item.visible}}</td>
+            <td>{{item.name}}</td>
+            <td>
+              <a routerLink="/faq/answer/{{item.id}}">
+                <button (click)="answer()" type="button" class="btn btn-secondary">Answer</button>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="pro-pagination-style mt-30 text-center">
+    <ul>
+        <li *ngIf="faq_list.previous" class="page-item"><a class="page-link" (click)="prev()"><</a></li>
+        <li class="page-item"><a class="page-link">{{page}}</a></li>
+        <li *ngIf="faq_list.next" class="page-item"><a class="page-link" (click)="next()">></a></li>
+    </ul>
+</div>

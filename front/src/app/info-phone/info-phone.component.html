@@ -1,0 +1,223 @@
+<app-header></app-header>
+<!-- <app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Info</h2>
+            <hr>
+            <div *ngIf="info">
+                <p *ngIf="info.name != null">Name: {{info.name}}</p>
+                <p>Price: {{info.price}}</p>
+                <p>Text: {{info.text}}</p>
+                <p>Screen_size: {{info.screen_size}}</p>
+                <p>Memory: {{info.memory}}</p>
+                <p>Battery: {{info.battery}}</p>
+                <p>Category: {{info.category.name}}</p>
+                <div>
+                  <p>Like: {{info.like}}</p>
+                  <button type="button" class="btn btn-danger" (click)="add_like()" style="margin-bottom:15px;">Like</button>
+                </div>
+              </div>
+              <button (click)="add_to_basket()" type="button" class="btn btn-success">Add to Backet</button>
+              <div *ngIf="same_product.length != 0">
+                <h2>Same Category</h2>
+                <div>
+                  <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Battery</th>
+                      <th scope="col">Category</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of same_product">
+                      <td>{{item.name}}</td>
+                      <td>{{item.price}}</td>
+                      <td>{{item.battery}}</td>
+                      <td>{{item.category.name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div *ngIf="img" class="carousel-inner">
+              <img src="{{baseurl}}/media/{{img.img}}" height="250px">
+            </div>
+            <a  *ngIf="index_img > 0" class="carousel-control-prev" (click)="prev_img()" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a  *ngIf="index_img < img_list.length -1 " class="carousel-control-next" (click)="next_img()" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <br>
+          <div class="col-md-12">
+            <form [formGroup]="form" (ngSubmit)="send()">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Text comment</label>
+                <input type="email" class="form-control" formControlName="text" placeholder="Enter your comment">
+              </div>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form> 
+          </div>
+          <div class="col-md-12">
+            <div *ngFor="let item of comment_list">
+              <p *ngIf="item.author !=null">Author: {{item.author.username}}</p>
+              <p *ngIf="item.author ==null">Author: No author</p>
+              <p>Text:{{item.text}}</p>
+              <hr>
+            </div>
+            <button type="button" class="btn btn-success" (click)="desire_goods()" style="margin-right:10px;">Desire goods</button>
+            <button type="button" class="btn btn-warning" (click)="compare_goods()">Compare</button>
+          </div>
+        </div>
+      </div> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="shop-area section-padding-2 pb-110">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="product-details-tab">
+                            <div class="product-dec-right pro-dec-big-img-slider">
+                                <div class="easyzoom-style">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <div *ngIf="img" class="pro-dec-next-prev">
+                                            <a class="prev " (click)="prev_img()" style="margin-right:10px;"><i
+                                                    class=" ti-arrow-left"></i></a>
+                                            <a href="#">
+                                                <img src="{{baseurl}}/media/{{img.img}}" height="450px">
+                                            </a>
+                                            <a class="next" (click)="next_img()" style="margin-left:10px;"><i
+                                                    class=" ti-arrow-right  "></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="info" class="col-xl-6 col-lg-12">
+                        <div class="product-details-wrap pro-dec-res-mrg-top">
+                            <div class="product-details-content pro-dec-content-left">
+                                <h2 class="uppercase">{{info.name}}</h2>
+                                <div class="pro-dec-info-wrap">
+                                    <div class="pro-dec-ratting-wrap">
+                                        <div class="pro-dec-ratting">
+                                            <i *ngIf="info.stars > 0" class="yellow fa fa-star"></i>
+                                            <i *ngIf="info.stars == 0" class="fa fa-star"></i>
+                                            <i *ngIf="info.stars > 1" class="yellow fa fa-star"></i>
+                                            <i *ngIf="info.stars < 2" class="fa fa-star"></i>
+                                            <i *ngIf="info.stars > 2" class="yellow fa fa-star"></i>
+                                            <i *ngIf="info.stars < 3" class="fa fa-star"></i>
+                                            <i *ngIf="info.stars > 3" class="yellow fa fa-star"></i>
+                                            <i *ngIf="info.stars < 4" class="fa fa-star"></i>
+                                            <i *ngIf="info.stars > 4" class="yellow fa fa-star"></i>
+                                            <i *ngIf="info.stars < 5" class="fa fa-star"></i>
+                                        </div>
+                                        <a href="#"> 5 Customer Review</a>
+                                    </div>
+                                </div>
+                                <h3>${{info.price}}</h3>
+                                <div class="product-details-peragraph">
+                                    <p>{{info.description}}</p>
+                                </div>
+                                <div class="product-details-action-wrap">
+                                    <div class="product-details-cart">
+                                        <a title="Add to cart" (click)="add_to_basket()">Add to Bin</a>
+                                    </div>
+                                    <div class="product-details-wishlist">
+                                        <a title="Add to wishlist" routerLink="/desire/goods"><i
+                                                class="fa fa-heart-o"></i></a>
+                                    </div>
+                                    <div class="product-details-compare">
+                                        <a title="Add to compare" routerLink="/product/comparison"><i
+                                                class="fa fa-compress"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="description-review-wrapper">
+                        <div class="description-review-topbar nav">
+                            <a class="active" data-toggle="tab" href="#des-details1">Additional-info</a>
+                            <a data-toggle="tab" href="#des-details2">Reviews</a>
+                            <a data-toggle="tab" href="#des-details3">Description</a>
+                            <a data-toggle="tab" href="#des-details4">Videos</a>
+                        </div>
+                        <div class="tab-content description-review-bottom">
+                            <div id="des-details1" class="tab-pane active">
+                                <div class="product-description-wrapper">
+                                    <div class="row">
+                                        <div id="des-details1" class="tab-pane">
+                                            <div class="additional-info">
+                                                <ul *ngFor="let item of specification_list">
+                                                    <li><span>{{item.specification}}</span>{{item.specification_value}}
+                                                    </li>
+                                                    <br>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="des-details2" class="tab-pane">
+                                <div class="review-wrapper">
+                                    <h2>Review</h2>
+                                    <div *ngFor="let item of comment_list" class="single-review">
+                                        <div class="review-img">
+                                            <img width="80px" height="80px" src="{{baseurl}}/media/{{item.author.img_profile}}" alt="">
+                                        </div>
+                                        <div class="review-content">
+                                            <div class="review-top-wrap">
+                                                <div class="review-name">
+                                                    <p *ngIf="item.author !=null"> <b>{{item.author.username}}</b></p>
+                                                    <p *ngIf="item.author ==null">No author</p>
+                                                    <p>{{item.text}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="des-details3" class="tab-pane ">
+                                <div class="about-shiping-content">
+                                    <p *ngIf="info">{{info.text}}</p>
+                                </div>
+                            </div>
+                            <div id="des-details4" class="tab-pane ">
+                                <div *ngIf="videos.length > 0">
+                                    <div class="row">
+                                        <div *ngFor="let url_item of list_url" class="col-md-4">
+                                            <iframe [src]="url_item"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

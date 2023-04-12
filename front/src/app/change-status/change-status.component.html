@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="container">
+        <form [formGroup]="form" (ngSubmit)="change()">
+            <select class="form-control" formControlName="status">
+                <option *ngFor="let item  of statuses" value="{{item.id}}">{{item.name}}</option>
+            </select>
+            <button type="submit" class="btn btn-primary" style="margin-top:10px;">Change</button>
+        </form>
+ </div>
