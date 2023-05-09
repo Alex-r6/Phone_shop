@@ -31,33 +31,27 @@ export class BlogDetailsComponent implements OnInit {
   getArticleById = (id:string) => {
     this.product.getArticleById(id).subscribe(
       data => {
-        console.log(data);
         this.article = data
       },
       error => {
-        console.log(error);
       }
     );
   }
   getBlogCommentList = (id:string) => {
     this.product.getBlogCommentList(id).subscribe(
       data => {
-        console.log(data);
         this.blog_list = data
       },
       error => {
-        console.log(error);
       }
     );
   }
   addBlogComment = (name_form:string, email:string, comment:string, article:string, token:string) => {
     this.product.addBlogComment(name_form, email, comment, article, token).subscribe(
       data => {
-        console.log(data);
         this.getBlogCommentList(this.id)
       },
       error => {
-        console.log(error);
       }
     );
   }

@@ -20,11 +20,9 @@ export class ContactInfoListComponent implements OnInit {
   getAllContactInfoList = (page:string) => {
     this.product.getAllContactInfoList(page).subscribe(
       data => {
-        console.log(data);
         this.contact_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }

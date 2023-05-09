@@ -32,7 +32,6 @@ export class ProfileComponent implements OnInit {
   getProfileToToken = (token:string) => {
     this.user.getProfileToToken(token).subscribe(
       data => {
-        console.log(data);
         this.profile = data;
         this.form.patchValue({
           nickname:data.nickname,
@@ -42,24 +41,19 @@ export class ProfileComponent implements OnInit {
         })
       },
       error => {
-        console.log(error);
       }
     );
   }
   updateProfileToToken = (token:string, nickname:string, phone:string, viber:string, telegram:string, img:File) => {
     this.user.updateProfileToToken(token, nickname, phone, viber, telegram, img).subscribe(
       data => {
-        console.log(data);
-        // this.profile = data;
         this.getProfileToToken(this.token)
       },
       error => {
-        console.log(error);
       }
     );
   }
   update():void{
-    console.log(this.fileToUpload)
     this.updateProfileToToken(this.token, this.form.value.nickname, this.form.value.phone, this.form.value.viber, this.form.value.telegram, this.fileToUpload)
   }
   handleFileInput(files: any): void {
@@ -70,6 +64,4 @@ export class ProfileComponent implements OnInit {
     };
     reader.readAsDataURL(this.fileToUpload);
   }
-
-
 }

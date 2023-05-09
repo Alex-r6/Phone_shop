@@ -24,8 +24,8 @@ export class ProductService {
   getProduct(id:string):Observable<any>{
     return this.http.get(this.baseurl + '/product/get/product/' + id + '/')
   }
-  addOrder(token:string, fio:string, phone:string, address:string):Observable<any>{
-    const body = {fio:fio, phone:phone, address:address}
+  addOrder(token:string, fio:string, phone:string, address:string, email:string):Observable<any>{
+    const body = {fio:fio, phone:phone, address:address, email:email}
     return this.http.post(this.baseurl + '/order/add/order/', body, 
     {headers: {'Content-Type': 'application/json', Authorization: 'Token ' + token}})
   }
@@ -196,6 +196,10 @@ export class ProductService {
   }
   getListVideoToProduct(id:string):Observable<any>{
     return this.http.get(this.baseurl + '/product/get/list/video/to/product/' + id + '/')
+  }
+  sendMessageToMail(subject:string, text:string, email:string):Observable<any>{
+    const body = {subject:subject, text:text, email:email}
+    return this.http.post(this.baseurl + '/order/send/message/to/mail/', body)
   }
  
 }

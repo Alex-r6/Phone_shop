@@ -43,12 +43,6 @@
                     <div class="sidebar-widget-list-2 mt-25">
                         <ul *ngFor="let item of category_list">
                             <li><a (click)="getArticleByCategory(item.id)">{{item.name}}</a> <span>{{item.quantity}}</span></li>
-                            <!-- <li><a href="#">Technology</a> <span>(08)</span></li>
-                            <li><a href="#">Photography</a> <span>(06)</span></li>
-                            <li><a href="#">Cafe</a> <span>(17)</span></li>
-                            <li><a href="#">Travel</a> <span>(9)</span></li>
-                            <li><a href="#">Games</a> <span>(14)</span></li>
-                            <li><a href="#">Story love</a> <span>(11)</span></li> -->
                         </ul>
                         <br>
                         <div class="blog-btn-2 btn-hover">
@@ -60,3 +54,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

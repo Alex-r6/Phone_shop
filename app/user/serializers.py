@@ -26,6 +26,7 @@ class OrderStatusSerializer(serializers.ModelSerializer):
 class OrderListSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True, many=False)
     status = OrderStatusSerializer(read_only=True, many=False)
+
     class Meta:
         model = Order
         fields = '__all__'
@@ -34,6 +35,7 @@ class OrderListSerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     role = RoleSerializer(read_only=True, many=False)
     img = serializers.ImageField(use_url=False)
+
     class Meta:
         model = Profile
         fields = ('img', 'nickname', 'phone', 'viber', 'telegram', 'role')

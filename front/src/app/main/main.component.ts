@@ -46,33 +46,27 @@ export class MainComponent implements OnInit {
   getAllProductList = (page:string) => {
     this.product.getAllProductList(page).subscribe(
       data => {
-        console.log(data);
         this.list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   getAllCategoryList = () => {
     this.product.getAllCategoryList().subscribe(
       data => {
-        console.log(data);
         this.category = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   getProductFilterByCategory = (id:string) => {
     this.product.getProductFilterByCategory(id).subscribe(
       data => {
-        console.log(data);
         this.list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -99,11 +93,9 @@ export class MainComponent implements OnInit {
   searchProductByName = (search:string, page:string) => {
     this.product.searchProductByName(search, page).subscribe(
       data => {
-        console.log(data);
         this.list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -115,11 +107,9 @@ export class MainComponent implements OnInit {
   getAllProductsLogo = () => {
     this.product.getAllProductsLogo().subscribe(
       data => {
-        console.log(data);
         this.logo_img = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -127,22 +117,18 @@ export class MainComponent implements OnInit {
   getPopularProduct = () => {
     this.product.getPopularProduct().subscribe(
       data => {
-        console.log(data);
         this.popular = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   getAllBannersList = () => {
     this.product.getAllBannersList().subscribe(
       data => {
-        console.log(data);
         this.banner = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -172,12 +158,10 @@ export class MainComponent implements OnInit {
   addNeedfullProduct = (token:string, product:string) => {
     this.product.addNeedfullProduct(token, product).subscribe(
       data => {
-        console.log(data);
         this.desire = data;
         window.location.href="/desire/goods"
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -188,17 +172,14 @@ export class MainComponent implements OnInit {
   addProductComparison = (token:string, product:string) => {
     this.product.addProductComparison(token, product).subscribe(
       data => {
-        console.log(data);
         this.compare = data;
         window.location.href="/product/comparison"
       },
       error => {
-        console.log(error);
       }
     );
   }
   compare_goods(info:any):void{
     this.addProductComparison(this.token, info.id)
   }
-
 }

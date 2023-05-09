@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class ManagerCommentsComponent implements OnInit {
   constructor(private product:ProductService) { }
   token: any;
   comments: any=[];
+  baseurl = environment.apiUrl;
   // info: any;
   ngOnInit(): void {
     this.token = localStorage.getItem('my_token')
@@ -19,11 +21,9 @@ export class ManagerCommentsComponent implements OnInit {
   getAllCommentByManager = () => {
     this.product.getAllCommentByManager ().subscribe(
       data => {
-        console.log(data);
         this.comments = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -31,32 +31,14 @@ export class ManagerCommentsComponent implements OnInit {
   delCommentManagerById= (id:string) => {
     this.product.delCommentManagerById(id).subscribe(
       data => {
-        console.log(data);
         alert('Valid delete')
         this.getAllCommentByManager()
       },
       error => {
-        console.log(error);
       }
     );
   }
   delete(id:string):void{
     this.delCommentManagerById(id)
   }
-
-  // getProduct = (id:string) => {
-  //   this.product.getProduct(id).subscribe(
-  //     data => {
-  //       console.log(data);
-  //       this.info = data;
-  //     },
-  //     error => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
-  // show_product(id:string):void{
-  //   this.getProduct(id)
-  // }
-
-}
+ }

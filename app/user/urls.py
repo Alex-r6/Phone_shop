@@ -8,4 +8,3 @@ urlpatterns = [
     path('update/profile/to/token/', UpdateProfileToToken.as_view()),
     path('get/list/order/manager/', GetListOrderManager.as_view())
 ]
-

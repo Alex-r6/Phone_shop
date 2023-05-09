@@ -23,11 +23,9 @@ export class HeaderComponent implements OnInit {
   getProfileToToken = (token:string) => {
     this.user.getProfileToToken(token).subscribe(
       data => {
-        console.log(data);
         this.profile = data;
       },
       error => {
-        console.log(error);
       }
     );
   }

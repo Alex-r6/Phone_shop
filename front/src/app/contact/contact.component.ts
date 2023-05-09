@@ -26,12 +26,10 @@ export class ContactComponent implements OnInit {
   addContactInfo = (name_form:string, email:string, phone:string, message:string, token:string) => {
     this.product.addContactInfo(name_form, email, phone, message, token).subscribe(
       data => {
-        console.log(data);
         this.contact = data;
-        // this.valid_message = 'Your message is very important for us. We will let you know our decision'
+        this.valid_message = 'Your message is very important for us. We will let you know our decision'
       },
       error => {
-        console.log(error);
       }
     );
   }

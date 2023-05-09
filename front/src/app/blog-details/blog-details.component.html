@@ -16,7 +16,7 @@
                     <div class="blog-details-content">
                         <div class="blog-details-img">
                             <img *ngIf="article.img" src="{{baseurl}}/media/{{article.img}}" alt="blog">
-                            <img *ngIf="article.img == null"src="assets/default_product.png" alt="blog">
+                            <img *ngIf="article.img == null" src="assets/default_product.png" alt="blog">
                             <span>{{article.category.name}}</span>
                         </div>
                         <h3>{{article.title}}</h3>
@@ -28,37 +28,10 @@
                             </ul>
                         </div>
                         <p>{{article.text}}</p>
-                        <!-- <p>Proin elementum neque nec leo finibus laoreet. Proin sit amet nibh sapien. Suspendisse hendrerit at enim eu porta. Duis egestas, est nec facilisis tincidunt, eros metus dignissim ligula, vel maximus nisi lorem in quam. Phasellus congue consequat nulla vel finibus. Morbi vitae condimentum tellus, eu consequat massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget arcu et dolor venenatis lobortis. Ut tincidunt ex risus, in pretium lectus posuere ut. Donec et metus in nulla suscipit scelerisque. Etiam dictum, massa a feugiat fermentum, felis diam dignissim orci, quis ullamcorper metus mi pharetra est. Donec commodo elementum bibendum.</p>
-                        <p>Suspendisse id neque tempor, dapibus ipsum ut, finibus purus. Praesent non consequat ligula, eget dapibus nulla. Nullam a dui purus. Praesent et purus elit. Nam mattis dui nisi, at rhoncus lectus fermentum in. Cras magna sapien, dignissim sit amet bibendum a, aliquet vitae velit. Cras sodales commodo rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt neque a maximus feugiat. In vitae augue erat. Mauris accumsan libero sit amet est varius imperdiet. Suspendisse laoreet diam ac purus commodo ultrices. Vivamus eget nunc ultrices, dignissim dui nec, tempor tortor.</p> -->
-                        <!-- <div class="blog-dec-midle-content">
-                            <img src="assets/images/blog/blog-8.png" alt="blog">
-                            <h3>To Keep Makeup Looking Fresh Take A Powder</h3>
-                            <p>Proin elementum neque nec leo finibus laoreet. Proin sit amet nibh sapien. Suspendisse hendrerit at enim eu porta. Duis egestas, est nec facilisis tincidunt, eros metus dignissim ligula, vel maximus nisi lorem in quam. Phasellus congue consequat nulla vel finibus. Morbi vitae condimentum tellus, eu consequat massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget arcu et dolor venenatis lobortis. Ut tincidunt ex risus, in pretium lectus posuere ut. Donec et metus in nulla suscipit scelerisque. Etiam dictum, massa a feugiat fermentum, felis diam dignissim orci, quis ullamcorper metus mi pharetra est. Donec commodo elementum bibendum.</p>
-                            <p>Suspendisse id neque tempor, dapibus ipsum ut, finibus purus. Praesent non consequat ligula, eget dapibus nulla. Nullam a dui purus. Praesent et purus elit. Nam mattis dui nisi, at rhoncus lectus fermentum in. Cras magna sapien, dignissim sit amet bibendum a, aliquet vitae velit. Cras sodales commodo rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt neque a maximus feugiat. In vitae augue erat. Mauris accumsan libero sit amet est varius imperdiet. Suspendisse laoreet diam ac purus commodo ultrices. Vivamus eget nunc ultrices, dignissim dui nec, tempor tortor.</p>
-                        </div> -->
-                        <!-- <div class="quote-content quote-content-mrg text-center">
-                            <h5><a href="blog-details.html">“Highly customizable. Excellent design. Customer services has exceeded my expectation. They are quick to answer and even when they don’t know the answer right away. They’ll work with you towards a solution”</a></h5>
-                            <div class="blog-name">
-                                <span>Michael Franklin</span>
-                            </div>
-                        </div>
-                        <p>Proin elementum neque nec leo finibus laoreet. Proin sit amet nibh sapien. Suspendisse hendrerit at enim eu porta. Duis egestas, est nec facilisis tincidunt, eros metus dignissim ligula, vel maximus nisi lorem in quam. Phasellus congue consequat nulla vel finibus. Morbi vitae condimentum tellus, eu consequat massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget arcu et dolor venenatis lobortis. Ut tincidunt ex risus, in pretium lectus posuere ut. Donec et metus in nulla suscipit scelerisque. Etiam dictum, massa a feugiat fermentum, felis diam dignissim orci, quis ullamcorper metus mi pharetra est. Donec commodo elementum bibendum.</p>
-                        <p>Suspendisse id neque tempor, dapibus ipsum ut, finibus purus. Praesent non consequat ligula, eget dapibus nulla. Nullam a dui purus. Praesent et purus elit. Nam mattis dui nisi, at rhoncus lectus fermentum in. Cras magna sapien, dignissim sit amet bibendum a, aliquet vitae velit. Cras sodales commodo rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt neque a maximus feugiat. In vitae augue erat. Mauris accumsan libero sit amet est varius imperdiet. Suspendisse laoreet diam ac purus commodo ultrices. Vivamus eget nunc ultrices, dignissim dui nec, tempor tortor.</p>
-                    </div> -->
                     </div>
-                    <!-- <div class="next-prev-wrap">
-                        <div class="next-wrap next-prev-conent">
-                            <h4><a href="#">Brighten Up <br>Dull Tired Skin</a></h4>
-                            <a href="#">Prev Post</a>
-                        </div>
-                        <div class="prev-wrap next-prev-conent">
-                            <h4><a href="#">Beauty Pageants Should You <br> Let Your Teen Enter Them</a></h4>
-                            <a href="#">Next Post</a>
-                        </div>
-                    </div> -->
                     <div class="blog-comments-area">
                         <h4 class="blog-details-title">Comment</h4>
-                        <div *ngFor="let item of blog_list"class="blog-comments-wrap">
+                        <div *ngFor="let item of blog_list" class="blog-comments-wrap">
                             <div class="single-blog-bundel">
                                 <div>
                                     <div class="blog-comment-img">
@@ -69,146 +42,43 @@
                                         <p *ngIf="item.name == null">Author:{{item.form_name}}</p>
                                     </div>
                                     <div class="blog-comment-content">
-                                        <p>Email:  {{item.email}}</p>
+                                        <p>Email: {{item.email}}</p>
                                     </div>
                                     <div class="blog-comment-content">
-                                        <p>Comment:  {{item.comment}}</p>
+                                        <p>Comment: {{item.comment}}</p>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="comment-form">
-                        <h3>Leave Comment </h3>
-                        <form [formGroup]="form" action="#">
-                            <div class="row">
-                                <div *ngIf="token == null" class="col-lg-4 col-md-4">
-                                    <div class="leave-form">
-                                        <input placeholder="Name *" formControlName="name_form" type="text">
+                        <br>
+                        <div class="comment-form">
+                            <h3>Leave Comment </h3>
+                            <form [formGroup]="form" action="#">
+                                <div class="row">
+                                    <div *ngIf="token == null" class="col-lg-4 col-md-4">
+                                        <div class="leave-form">
+                                            <input placeholder="Name *" formControlName="name_form" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="leave-form">
+                                            <input placeholder="Email *" formControlName="email" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="leave-form">
+                                            <textarea placeholder="Your Comment" formControlName="comment"></textarea>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="leave-form">
-                                        <input placeholder="Email *" formControlName="email" type="text">
-                                    </div>
+                                <div class="text-submit">
+                                    <input type="submit" (click)="send()" value="Post Comment">
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="leave-form">
-                                        <textarea placeholder="Your Comment" formControlName="comment"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-submit">
-                                <input type="submit" (click)="send()" value="Post Comment">
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- <div class="col-lg-3">
-                <div class="sidebar-search">
-                    <form class="search-form" action="#">
-                        <input type="text" placeholder="SEARCH POST...">
-                        <button class="button-search"><i class="lnr lnr-magnifier"></i></button>
-                    </form>
-                </div> -->
-                <!-- <div class="sidebar-widget mt-60 mb-55">
-                    <h4 class="pro-sidebar-title2">Popular Post </h4>
-                    <div class="sidebar-post-wrap mt-30">
-                        <div class="single-sidebar-post">
-                            <div class="sidebar-post-img">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-sidebar-1.png" alt=""></a>
-                            </div>
-                            <div class="sidebar-post-content">
-                                <h4><a href="blog-details.html">Fahion Watch</a></h4>
-                                <span>19 Augs, 2019 - by John </span>
-                            </div>
-                        </div>
-                        <div class="single-sidebar-post">
-                            <div class="sidebar-post-img">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-sidebar-2.png" alt=""></a>
-                            </div>
-                            <div class="sidebar-post-content">
-                                <h4><a href="blog-details.html">Old Streets</a></h4>
-                                <span>19 Augs, 2019 - by John </span>
-                            </div>
-                        </div>
-                        <div class="single-sidebar-post">
-                            <div class="sidebar-post-img">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-sidebar-3.png" alt=""></a>
-                            </div>
-                            <div class="sidebar-post-content">
-                                <h4><a href="blog-details.html">New Suite</a></h4>
-                                <span>19 Augs, 2019 - by John </span>
-                            </div>
-                        </div>
-                        <div class="single-sidebar-post">
-                            <div class="sidebar-post-img">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-sidebar-4.png" alt=""></a>
-                            </div>
-                            <div class="sidebar-post-content">
-                                <h4><a href="blog-details.html">Beautiful Flower</a></h4>
-                                <span>19 Augs, 2019 - by John </span>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="sidebar-widget mb-60">
-                    <h4 class="pro-sidebar-title2">Archives </h4>
-                    <div class="archives-wrap mt-30">
-                        <select>
-                            <option> June 2019 </option>
-                            <option> December 2018 </option>
-                            <option> November 2018 </option>
-                        </select>
-                    </div>
-                </div> -->
-                <!-- <div class="sidebar-widget mb-55">
-                    <h4 class="pro-sidebar-title2">Tags </h4>
-                    <div class="sidebar-widget-tags-2 mt-25">
-                        <ul>
-                            <li><a href="#">Beauty,</a></li>
-                            <li><a href="#">Life Style,</a></li>
-                            <li><a href="#">Technology,</a></li>
-                            <li><a href="#">Design,</a></li>
-                            <li><a href="#">Fashion,</a></li>
-                            <li><a href="#">Furniture,</a></li>
-                            <li><a href="#">Travel,</a></li>
-                            <li><a href="#">Photography,</a></li>
-                            <li><a href="#">Motion Design</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- <div class="sidebar-widget mb-65">
-                    <div class="blog-sidebar-banner">
-                        <a href="#"><img alt="" src="assets/images/blog/banner-blog.jpg"></a>
-                        <div class="blog-sidebar-content">
-                            <h3>Ad Banner </h3>
-                            <h5>info@example.com</h5>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="sidebar-widget mb-65">
-                    <div class="subscribe-form-5">
-                        <form class="validate subscribe-form-style-5" novalidate="" target="_blank" name="mc-embedded-subscribe-form" method="post" action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef">
-                            <div class="mc-form-5">
-                                <input class="email" type="email" required="" placeholder="Enter your email address..." name="EMAIL" value="">
-                                <div class="mc-news-5" aria-hidden="true">
-                                    <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef">
-                                </div>
-                                <div class="clear-5">
-                                    <input class="button" type="submit" name="subscribe" value="">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="sidebar-widget">
-                    <div class="instagram-feed-thumb-5">
-                        <div id="Instafeed-5" class="instagram-wrap-5">
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
+<app-footer></app-footer>

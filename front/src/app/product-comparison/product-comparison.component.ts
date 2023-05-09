@@ -31,11 +31,9 @@ export class ProductComparisonComponent implements OnInit {
   getProductComparisonByUser = (token:string) => {
     this.product.getProductComparisonByUser(token).subscribe(
       data => {
-        console.log(data);
         this.compare = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -45,11 +43,9 @@ export class ProductComparisonComponent implements OnInit {
   delProductComparison = (id:string) => {
     this.product.delProductComparison(id).subscribe(
       data => {
-        console.log(data);
         this.getProductComparisonByUser(this.token)
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -75,5 +71,4 @@ export class ProductComparisonComponent implements OnInit {
     localStorage.setItem('bin', JSON.stringify(this.product_list))
     window.location.href='/bin'
   }
-
 }

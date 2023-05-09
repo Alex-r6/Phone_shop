@@ -28,6 +28,7 @@ class ElemOrderSerializer(serializers.ModelSerializer):
 
 class ElemOrderSerializer2(serializers.ModelSerializer):
     product = ProductSerializer(read_only=True, many=False)
+
     class Meta:
         model = ElemOrder
         fields = '__all__'
@@ -39,16 +40,9 @@ class OrderSerializerTwo(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ('username', )
-
-
 class ChatOrderSerializer(serializers.ModelSerializer):
     name = UserSerializer(read_only=True, many=False)
+
     class Meta:
         model = ChatOrder
         fields = '__all__'
-
-

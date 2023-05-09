@@ -29,12 +29,10 @@ export class ChatOrderComponent implements OnInit {
   addChatOrder = (form_name:string, text:string, token:string, id:string, order:string) => {
     this.product.addChatOrder(form_name, text, token, id, order).subscribe(
       data => {
-        console.log(data);
         this.chat_order = data;
         this.getChatOrderById(this.id)
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -44,13 +42,10 @@ export class ChatOrderComponent implements OnInit {
   getChatOrderById = (id:string) => {
     this.product.getChatOrderById(id).subscribe(
       data => {
-        console.log(data);
         this.chat_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
-
 }

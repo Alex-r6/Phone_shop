@@ -1,3 +1,4 @@
+from django.core.mail import send_mail
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,7 +10,6 @@ from app.order.serializers import OrderSerializer, ElemOrderSerializer, OrderSta
 
 
 class AddOrder(APIView):
-
     def post(self, request, *args, **kwargs):
         item = OrderSerializer(data=request.data)
         if item.is_valid():
@@ -22,7 +22,6 @@ class AddOrder(APIView):
 
 
 class AddElemOrder(APIView):
-
     def post(self, request, *args, **kwargs):
         item = ElemOrderSerializer(data=request.data)
         if item.is_valid():
@@ -40,7 +39,6 @@ class GetOrderListByUser(generics.ListAPIView):
 
 
 class UpdateOrder(APIView):
-
     def get_object(self, id):
         return Order.objects.get(id=id)
 
@@ -55,7 +53,6 @@ class UpdateOrder(APIView):
 
 
 class DelOrder(APIView):
-
     def get_object(self,id):
         return Order.objects.get(id=id)
 
@@ -133,6 +130,11 @@ class GetChatOrderById(generics.ListAPIView):
         return ChatOrder.objects.filter(order_id=self.kwargs['id'])
 
 
+class SendMessageToMail(APIView):
 
-
-
+    def post(self, request, *args, **kwargs):
+        send_mail(
+            request.data.get('subject'), request.data.get('text'), 'oorlov.1986@gmail.com',
+            [request.data.get('email')], fail_silently=False
+        )
+        return Response(request.data)

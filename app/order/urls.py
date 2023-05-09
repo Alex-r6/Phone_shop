@@ -15,4 +15,5 @@ urlpatterns = [
     path('delete/order/by/manager/<int:id>/', DeleteOrderByManager.as_view()),
     path('add/chat/order/<int:id>/', AddChatOrder.as_view()),
     path('get/chat/order/by/id/<int:id>/', GetChatOrderById.as_view()),
+    path('send/message/to/mail/', SendMessageToMail.as_view())
 ]

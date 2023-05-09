@@ -18,11 +18,9 @@ export class FaqListManagerComponent implements OnInit {
   getAllFaqList = (page:string) => {
     this.product.getAllFaqList(page).subscribe(
       data => {
-        console.log(data);
         this.faq_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }

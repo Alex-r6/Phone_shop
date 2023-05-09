@@ -1,45 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Shop</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="">Main <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" *ngIf="token==null">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <li class="nav-item"*ngIf="token==null">
-          <a class="nav-link" routerLink="/registration">Registration</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/bin">Bin</a>
-        </li>
-        <li class="nav-item" *ngIf="token!=null">
-          <a class="nav-link" routerLink="/profile">Profile</a>
-        </li>
-        <li class="nav-item" *ngIf="token!=null">
-          <a class="nav-link" routerLink="/order/list">Order List</a>
-        </li>
-        <li class="nav-item" *ngIf="token!=null && profile && profile.role.id == 3" >
-          <a class="nav-link" routerLink="/order/list/manager" >Order List Manager</a>
-        </li>
-        <li class="nav-item" *ngIf="token!=null && profile && profile.role.id == 3" >
-          <a class="nav-link" routerLink="/manager/comments">Manager comments</a>
-        </li>
-        <li class="nav-item" *ngIf="token!=null" >
-          <a class="nav-link" routerLink="/desire/goods">Desired Goods</a>
-        </li>
-        <li class="nav-item" *ngIf="token!=null" >
-          <a class="nav-link" routerLink="/product/comparison">Product Comparison</a>
-        </li>
-        <button type="button" class="btn btn-danger" (click)="log_out()" *ngIf="token!=null">Log out</button>
-      </ul>
-    </div>
-  </nav> -->
-
   <div class="header-middle section-padding-2">
     <div class="container-fluid">
         <div class="header-ptb">
@@ -52,7 +10,7 @@
                 <div class="col-xl-4 col-lg-2">
                     <div class="logo logo-res-lg text-center">
                         <a routerLink="">
-                            <img src="assets/assets/images/logo/logo.png" alt="logo">
+                            <img src="../assets/l-2.png" height="100px" alt="logo">
                         </a>
                     </div>
                 </div>

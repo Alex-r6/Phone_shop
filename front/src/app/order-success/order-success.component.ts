@@ -22,11 +22,9 @@ export class OrderSuccessComponent implements OnInit {
   getOrderbyId = (id:string) => {
     this.product.getOrderById(id).subscribe(
       data => {
-        console.log(data);
         this.order = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -34,11 +32,9 @@ export class OrderSuccessComponent implements OnInit {
   getElemOrderByOrderId = (id:string) => {
     this.product.getElemOrderByOrderId(id).subscribe(
       data => {
-        console.log(data);
         this.elem_order = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -46,11 +42,9 @@ export class OrderSuccessComponent implements OnInit {
   deleteOrderByManager = (id:string) => {
     this.product.deleteOrderByManager(id).subscribe(
       data => {
-        console.log(data);
         window.location.href=''
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -58,5 +52,4 @@ export class OrderSuccessComponent implements OnInit {
     this.deleteOrderByManager(id)
     window.location.href=''
   }
-
 }

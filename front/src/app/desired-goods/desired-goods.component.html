@@ -1,112 +1,53 @@
 <app-header></app-header>
-        <!-- <table class="table table-dark">
-            <thead>
-              <tr>
-                <th scope="col">User</th>
-                <th scope="col">Product</th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let item of desire_goods">
-              <tr>
-                <td>{{item.user.username}}</td>
-                <td *ngIf="item.product">{{item.product.name}}</td>
-                <td *ngIf="item.product == null">No product</td>
-                <td>
-                    <button type="button" class="btn btn-primary" (click)="delete(item.id)">Delete</button> 
-                  </td>
-                </tr>
-              </tbody>
-            </table> -->
-
-            <div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
-              <div class="container-fluid">
-                  <div class="breadcrumb-content text-center">
-                      <div class="breadcrumb-title">
-                          <h2>Wishlist</h2>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-            <!-- <div class="container">
-              <div class="row">
-                <table>
-                  <thead>
-                      <tr>
-                          <th></th>
-                          <th></th>
-                          <th>Product</th>
-                          <th> Price</th>
-                          <th>Quantity</th>
-                          <th>Add To Cart</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr *ngFor="let item of desire_goods">
-                          <td class="product-remove">
-                              <a (click)="delete(item.id)"><i class=" ti-close "></i></a>
-                          </td>
-                          <td class="product-img">
-                              <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
-                          </td>
-                          <td class="product-name"><a href="#">{{item.product.name}}</a></td>
-                          <td class="product-price"><span class="amount">${{item.product.price}}</span></td>
-                          <td class="cart-quality">
-                              <div class="product-details-quality quality-width-cart">
-                                  <div class="cart-plus-minus">
-                                      <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                  </div>
-                              </div>
-                          </td>
-                          <td class="product-wishlist-cart"><a routerLink="/bin">add to cart</a></td>
-                      </tr>
-                  </tbody>
-              </table>
-              </div>
-            </div> -->
-
-
-            <div class="cart-main-area pt-110 pb-70">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                          <form action="#">
-                              <div class="row">
-                                  <div class="col-lg-8 ml-auto mr-auto">
-                                      <div class="table-content table-responsive cart-table-content">
-                                          <table>
-                                              <thead>
-                                                  <tr>
-                                                      <th></th>
-                                                      <th></th>
-                                                      <th>Product</th>
-                                                      <th> Price</th>
-                                                      <th>Add To Cart</th>
-                                                  </tr>
-                                              </thead>
-                                              <tbody>
-                                                  <tr *ngFor="let item of desire_goods">
-                                                      <td class="product-remove">
-                                                          <a (click)="delete(item.id)"><i class=" ti-close "></i></a>
-                                                      </td>
-                                                      <td class="product-img">
-                                                          <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
-                                                      </td>
-                                                      <td class="product-name"><a href="#">{{item.product.name}}</a></td>
-                                                      <td class="product-price"><span class="amount">{{item.product.price}}</span></td>        
-                                                      <td class="product-wishlist-cart" (click)="add_to_basket(item.product)"><a>add to cart</a></td>
-                                                  </tr>
-                                              </tbody>
-                                          </table>
-                                      </div>
-                                  </div>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-            
-        
-        
-        
+<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <div class="breadcrumb-title">
+                <h2>Wishlist</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cart-main-area pt-110 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-8 ml-auto mr-auto">
+                            <div class="table-content table-responsive cart-table-content">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Product</th>
+                                            <th> Price</th>
+                                            <th>Add To Cart</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of desire_goods">
+                                            <td class="product-remove">
+                                                <a (click)="delete(item.id)"><i class=" ti-close "></i></a>
+                                            </td>
+                                            <td class="product-img">
+                                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                                            </td>
+                                            <td class="product-name"><a href="#">{{item.product.name}}</a></td>
+                                            <td class="product-price"><span class="amount">{{item.product.price}}</span>
+                                            </td>
+                                            <td class="product-wishlist-cart" (click)="add_to_basket(item.product)">
+                                                <a>add to cart</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

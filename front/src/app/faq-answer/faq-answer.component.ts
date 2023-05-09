@@ -25,7 +25,6 @@ export class FaqAnswerComponent implements OnInit {
   getFaqListByAnswer = (id:string) => {
     this.product.getFaqListByAnswer(id).subscribe(
       data => {
-        console.log(data);
         this.faq = data;
         this.form.patchValue ({
           question:data.question,
@@ -33,7 +32,6 @@ export class FaqAnswerComponent implements OnInit {
         })
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -44,14 +42,11 @@ export class FaqAnswerComponent implements OnInit {
   updateFaqQuestion = (answer:string, visible:string, id:string) => {
     this.product.updateFaqQuestion(answer, visible, id).subscribe(
       data => {
-        console.log(data);
         this.faq = data;
         window.location.href='faq/list/manager'
       },
       error => {
-        console.log(error);
       }
     );
   }
-
 }

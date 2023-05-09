@@ -24,6 +24,7 @@ class Product(models.Model):
     category = models.ForeignKey(ProductCategory, null=True, blank=True, on_delete=models.SET_NULL)
     like = models.IntegerField(default=0)
     stars = models.IntegerField(default=0)
+    new = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -121,8 +122,3 @@ class BlogComment(models.Model):
     email = models.CharField(max_length=30)
     comment = models.TextField()
     article = models.ForeignKey(Article, null=True, blank=True, on_delete=models.CASCADE)
-
-
-
-
-

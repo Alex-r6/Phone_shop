@@ -30,11 +30,9 @@ export class DesiredGoodsComponent implements OnInit {
   getAllNeedfullProductList = () => {
     this.product.getAllNeeedfullProductList().subscribe(
       data => {
-        console.log(data);
         this.desire_goods = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -45,11 +43,9 @@ export class DesiredGoodsComponent implements OnInit {
   delNeedfullProduct = (id:string) => {
     this.product.delNeedfullProduct(id).subscribe(
       data => {
-        console.log(data);
         this.getAllNeedfullProductList()
       },
       error => {
-        console.log(error);
       }
     );
   }

@@ -52,7 +52,7 @@
               <div class="billing-info-wrap mr-50">
                   <h3>Billing Details</h3>
                   <div class="row">
-                      <div class="col-lg-6 col-md-6">
+                      <div *ngIf="order.fio" class="col-lg-6 col-md-6">
                           <div class="billing-info mb-20">
                               <label>First Name</label>
                               <input type="text" value="{{order.fio}}">
@@ -68,6 +68,12 @@
                           <div class="billing-info mb-20">
                               <label>Address</label>
                               <input type="text" value="{{order.address}}">
+                          </div>
+                      </div>
+                      <div class="col-lg-12">
+                          <div class="billing-info mb-20">
+                              <label>Email</label>
+                              <input type="text" value="{{order.email}}">
                           </div>
                       </div>
                   </div>                 
@@ -99,3 +105,4 @@
 </div>
 <button type="button" class="btn btn-danger" (click)="delete(order.id)">Delete</button>
 </div>
+<app-footer></app-footer>

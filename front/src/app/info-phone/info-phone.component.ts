@@ -55,11 +55,9 @@ export class InfoPhoneComponent implements OnInit {
   getProduct = (id:string) => {
     this.product.getProduct(id).subscribe(
       data => {
-        console.log(data);
         this.info = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -88,11 +86,9 @@ export class InfoPhoneComponent implements OnInit {
   addProductComment = (token:string, text:string, product:string) => {
     this.product.addProductComment(token, text, product).subscribe(
       data => {
-        console.log(data);
         this.getProductCommentList(this.id);
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -102,42 +98,38 @@ export class InfoPhoneComponent implements OnInit {
   getProductCommentList = (id:string) => {
     this.product.getProductCommentList(id).subscribe(
       data => {
-        console.log(data);
         this.comment_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   getProductImgList = (id:string) => {
     this.product.getProductImgList(id).subscribe(
       data => {
-        console.log(data);
         this.img_list = data;
         this.img = data[0];
       },
       error => {
-        console.log(error);
       }
     );
   }
   next_img():void{
     this.index_img += 1
     this.img = this.img_list[this.index_img]
+    
+    
   }
   prev_img():void{
     this.index_img -= 1
-    this.img = this.img_list[this.index_img]
+    this.img = this.img_list[this.index_img]   
   }
   getSameProductByCategory = (id:string) => {
     this.product.getSameProductByCategory(id).subscribe(
       data => {
-        console.log(data);
         this.same_product = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -145,11 +137,9 @@ export class InfoPhoneComponent implements OnInit {
   addLike = (token:string, product:string) => {
     this.product.addLike(token, product).subscribe(
       data => {
-        console.log(data);
         this.getProduct(this.id)
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -160,12 +150,10 @@ export class InfoPhoneComponent implements OnInit {
   addNeedfullProduct = (token:string, product:string) => {
     this.product.addNeedfullProduct(token, product).subscribe(
       data => {
-        console.log(data);
         this.desire = data;
         window.location.href="/desire/goods"
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -176,12 +164,10 @@ export class InfoPhoneComponent implements OnInit {
   addProductComparison = (token:string, product:string) => {
     this.product.addProductComparison(token, product).subscribe(
       data => {
-        console.log(data);
         this.compare = data;
         window.location.href="/product/comparison"
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -192,27 +178,22 @@ export class InfoPhoneComponent implements OnInit {
   getProductSpecificationById = (id:string) => {
     this.product.getProductSpecificationById(id).subscribe(
       data => {
-        console.log(data);
         this.specification_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   getListVideoToProduct = (id:string) => {
     this.product.getListVideoToProduct(id).subscribe(
       data => {
-        console.log(data);
         this.videos = data;
         for(let i = 0; i < this.videos.length; i++){
           this.list_url.push(this.sanitizer.bypassSecurityTrustResourceUrl(this.videos[i].video))
         }
       },
       error => {
-        console.log(error);
       }
     );
   }
-
 }

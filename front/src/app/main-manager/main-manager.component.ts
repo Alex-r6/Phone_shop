@@ -22,11 +22,9 @@ export class MainManagerComponent implements OnInit {
   getOrderbyId = (id:string) => {
     this.product.getOrderById(id).subscribe(
       data => {
-        console.log(data);
         this.order = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -34,22 +32,18 @@ export class MainManagerComponent implements OnInit {
   getElemOrderByOrderId = (id:string) => {
     this.product.getElemOrderByOrderId(id).subscribe(
       data => {
-        console.log(data);
         this.elem_order = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   deleteOrderByManager = (id:string) => {
     this.product.deleteOrderByManager(id).subscribe(
       data => {
-        console.log(data);
         window.location.href=''
       },
       error => {
-        console.log(error);
       }
     );
   }

@@ -23,23 +23,19 @@ export class OrderListComponent implements OnInit {
   getOrderListByUser = (token:string, page:string) => {
     this.user.getOrderListByUser(token, page).subscribe(
       data => {
-        console.log(data);
         this.order_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   delOrder = (id:string) => {
     this.product.delOrder(id).subscribe(
       data => {
-        console.log(data);
         this.getOrderListByUser(this.token,'1')
         alert('valid delete')
       },
       error => {
-        console.log(error);
         alert('error delete')
       }
     );

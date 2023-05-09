@@ -1,65 +1,49 @@
 <app-header></app-header>
-<!-- <div class="container">
-    <h2>Compare Products:</h2>
-    <div class="row">
-        <div *ngFor="let item of compare" class="col-md-6">
-            <div>
-                <p>{{item.user.username}}</p>
-                <p>{{item.product.name}}</p>
-                <button type="button" class="btn btn-primary" (click)="delete(item.id)">Delete</button>
+<div class="container">
+    <div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
+        <div class="container-fluid">
+            <div class="breadcrumb-content text-center">
+                <div class="breadcrumb-title">
+                    <h2>Compare</h2>
+                </div>
             </div>
         </div>
     </div>
-</div> -->
-
-
-<div class="breadcrumb-area section-padding-1 bg-gray breadcrumb-ptb-1">
-    <div class="container-fluid">
-        <div class="breadcrumb-content text-center">
-            <div class="breadcrumb-title">
-                <h2>Compare</h2>
+    <div class="col-lg-12">
+        <div class="compare-page-content-wrap">
+            <div class="compare-table table-responsive">
+                <table class="table table-bordered mb-0">
+                    <tbody>
+                        <tr>
+                            <th class="first-column">Product Info</th>
+                            <td *ngFor="let item of compare" class="product-image-title">
+                                <div class="compare-remove">
+                                    <a (click)="delete(item.id)"><i class="fa fa-times"></i>remove</a>
+                                </div>
+                                <a href="product-details.html" class="image">
+                                    <img class="img-fluid" src="{{baseurl}}/media/{{item.product.img}}"
+                                        style="height:100px;" alt="Compare Product">
+                                </a>
+                                <div class="pro-title">
+                                    <a href="product-details.html">{{item.product.name}}</a>
+                                </div>
+                                <div class="compare-btn">
+                                    <a (click)="add_to_basket(item.product)">Add to cart</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="first-column">Price</th>
+                            <td *ngFor="let item of compare" class="pro-price">{{item.product.price}}</td>
+                        </tr>
+                        <tr>
+                            <th class="first-column">Text</th>
+                            <td *ngFor="let item of compare" class="pro-price">{{item.product.text}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-<div class="col-lg-12">
-    <!-- Compare Page Content Start -->
-    <div class="compare-page-content-wrap">
-        <div class="compare-table table-responsive">
-            <table class="table table-bordered mb-0">
-                <tbody>
-                    <tr>
-                        <th class="first-column">Product Info</th>
-                        <td *ngFor="let item of compare" class="product-image-title">
-                            <div class="compare-remove">
-                                <a (click)="delete(item.id)"><i class="fa fa-times"></i>remove</a>
-                            </div>
-                            <a href="product-details.html" class="image">
-                                <img class="img-fluid" src="{{baseurl}}/media/{{item.product.img}}" style="height:100px;" alt="Compare Product">
-                            </a>
-                            <div class="pro-title">
-                                <a href="product-details.html">{{item.product.name}}</a>
-                            </div>
-                            <div class="compare-btn">
-                                <a (click)="add_to_basket(item.product)">Add to cart</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="first-column">Price</th>
-                        <td *ngFor="let item of compare" class="pro-price">{{item.product.price}}</td>
-                    </tr>
-                    <tr>
-                        <th class="first-column">Text</th>
-                        <td *ngFor="let item of compare" class="pro-price">{{item.product.text}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<app-footer></app-footer>

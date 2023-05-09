@@ -25,28 +25,23 @@ export class ChangeStatusComponent implements OnInit {
     this.getOrderById(this.id)
   }
   change():void{
-    console.log(this.form.value.status)
     this.updateOrderStatus(this.form.value.status, this.id, this.token)
     window.location.href='order/list'
   }
   getAllOrderStatusList = () => {
     this.product.getAllOrderStatusList().subscribe(
       data => {
-        console.log(data);
         this.statuses = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   updateOrderStatus = (status:string, id:string, token:string) => {
     this.product.updateOrderStatus(status, id, token).subscribe(
       data => {
-        console.log(data);
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -54,13 +49,11 @@ export class ChangeStatusComponent implements OnInit {
   getOrderById = (id:string) => {
     this.product.getOrderById(id).subscribe(
       data => {
-        console.log(data);
         this.form.patchValue({
           status: data.status.id,
         })
       },
       error => {
-        console.log(error);
       }
     );
   }

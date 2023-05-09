@@ -25,27 +25,22 @@ export class FaqComponent implements OnInit {
   getFaqList = () => {
     this.product.getFaqList().subscribe(
       data => {
-        console.log(data);
         this.faq_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   addFaqQuestion = (name_form:string, question:string, token:string) => {
     this.product.addFaqQuestion(name_form, question, token).subscribe(
       data => {
-        console.log(data);
         this.faq_list = data;
       },
       error => {
-        console.log(error);
       }
       );
     }
     send():void{
       this.addFaqQuestion(this.form.value.name, this.form.value.question, this.token)
     }
-
 }

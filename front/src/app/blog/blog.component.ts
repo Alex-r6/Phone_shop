@@ -22,22 +22,18 @@ export class BlogComponent implements OnInit {
   getAllArticlesList = () => {
     this.product.getAllArticlesList().subscribe(
       data => {
-        console.log(data);
         this.articles_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
   getAllCategoryArticleList = () => {
     this.product.getAllCategoryArticleList().subscribe(
       data => {
-        console.log(data);
         this.category_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -45,11 +41,9 @@ export class BlogComponent implements OnInit {
   getArticleByCategory = (id:string) => {
     this.product.getArticleByCategory(id).subscribe(
       data => {
-        console.log(data);
         this.articles_list = data;
       },
       error => {
-        console.log(error);
       }
     );
   }

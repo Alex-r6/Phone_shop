@@ -28,6 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
     def get_img_profile(self, item):
         profile = Profile.objects.get(user=item)
         return str(profile.img)
+
     class Meta:
         model = User
         fields = ('username', 'img_profile')
@@ -43,6 +44,7 @@ class ProductCommentSerializer(serializers.ModelSerializer):
 
 class ProductImgSerializer(serializers.ModelSerializer):
     img = serializers.ImageField(use_url=False)
+
     class Meta:
         model = ProductImg
         fields = '__all__'
@@ -58,6 +60,7 @@ class LogoSerializer(serializers.ModelSerializer):
 
 class BannerSerializer(serializers.ModelSerializer):
     img = serializers.ImageField(use_url=False)
+
     class Meta:
         model = Banner
         fields = '__all__'
@@ -66,6 +69,7 @@ class BannerSerializer(serializers.ModelSerializer):
 class ProductСomparisonSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True, many=False)
     product = ProductSerializer(read_only=True, many=False)
+
     class Meta:
         model = ProductСomparison
         fields = '__all__'
@@ -74,6 +78,7 @@ class ProductСomparisonSerializer(serializers.ModelSerializer):
 class NeedfullProductSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True, many=False)
     product = ProductSerializer(read_only=True, many=False)
+
     class Meta:
         model = NeedfullProduct
         fields = '__all__'
@@ -123,6 +128,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
 class BlogCommentSerializer(serializers.ModelSerializer):
     name = UserSerializer(read_only=True, many=False)
+
     class Meta:
         model = BlogComment
         fields = '__all__'

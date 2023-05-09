@@ -28,6 +28,7 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { FaqListManagerComponent } from './faq-list-manager/faq-list-manager.component';
 import { FaqAnswerComponent } from './faq-answer/faq-answer.component';
 import { ChatOrderComponent } from './chat-order/chat-order.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -56,7 +57,8 @@ import { ChatOrderComponent } from './chat-order/chat-order.component';
     BlogDetailsComponent,
     FaqListManagerComponent,
     FaqAnswerComponent,
-    ChatOrderComponent
+    ChatOrderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

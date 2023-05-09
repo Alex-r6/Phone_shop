@@ -97,7 +97,6 @@ class DelCommentManagerById(APIView):
         item = self.get_object(id)
         item.delete()
         return Response('Valid Delete')
-        return Response("Error Delete")
 
 
 class GetAllProductsLogo(generics.ListAPIView):
@@ -173,7 +172,6 @@ class DelNeedfullProduct(APIView):
         item = self.get_object(id)
         item.delete()
         return Response('Valid delete')
-        return Response("Error Delete")
 
 
 class GetAllNeedfullProductList(generics.ListAPIView):
@@ -214,11 +212,10 @@ class DelProductComparison(APIView):
          item = self.get_object(id)
          item.delete()
          return Response('Valid delete')
-         return Response('Error delete')
+
 
 
 class AddContactInfo(APIView):
-
     def post(self, request, *args, **kwargs):
         item = ContactInfoSerializer(data=request.data)
         if item.is_valid():
@@ -322,7 +319,6 @@ class GetArticleById(APIView):
         article = self.get_object(id)
         serializer = ArticleSerializer(article)
         return Response(serializer.data)
-        return Response(serializer.errors)
 
 
 class AddBlogComment(APIView):

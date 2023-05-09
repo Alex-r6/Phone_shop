@@ -16,6 +16,7 @@ class Order(models.Model):
     fio = models.CharField(max_length=40)
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=100)
+    email = models.CharField(max_length=50, null=True)
     status = models.ForeignKey(OrderStatus, null=True, blank=True, on_delete=models.CASCADE)
 
 

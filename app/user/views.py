@@ -47,8 +47,6 @@ class GetListOrderManager(APIView):
     serializer_class = OrderListSerializer
 
     def get(self, request, *args, **kwargs):
-        # if request.user.profile.role.id != 3:
-        #     return Response('Error', status=404)
         queryset = Order.objects.all()
         page = request.GET.get('page', 1)
         paginator = Paginator(queryset,1)
@@ -60,10 +58,3 @@ class GetListOrderManager(APIView):
             orders = paginator.page(paginator.num_pages)
         serializer = OrderListSerializer(orders, many=True)
         return Response({"data": serializer.data, "num_page": paginator.num_pages})
-
-
-# class GetListVideoToProduct(generics.ListAPIView):
-#     serializer_class = VideoSerializer
-#
-#     def get_queryset(self):
-#         return ProductVideo.objects.filter(product_id=self.kwargs['id'])

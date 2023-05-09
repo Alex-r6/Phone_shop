@@ -14,6 +14,7 @@ export class BinComponent implements OnInit {
     fio: new FormControl(null),
     phone: new FormControl(null),
     address: new FormControl(null),
+    email: new FormControl(null)
   })
   token:any;
   baseurl=environment.apiUrl
@@ -35,25 +36,23 @@ export class BinComponent implements OnInit {
     this.product_list =[];
     localStorage.setItem('bin',JSON.stringify(this.product_list))
   }
-  addOrder = (token:string, fio:string, phone:string, address:string,) => {
-    this.product.addOrder(token, fio, phone, address).subscribe(
+  addOrder = (token:string, fio:string, phone:string, address:string,email:string) => {
+    this.product.addOrder(token, fio, phone, address, email).subscribe(
       data => {
         for ( let i=0; i< this.product_list.length; i++){
             this.addElemOrder(data.id, this.product_list[i].count, this.product_list[i].id)
         } 
+        this.sendMessageToMail('shop phone', 'your order' + data.id +  'was recieved', this.form.value.email)
         window.location.href='/order/success/' + data.id
       },
       error => {
-        console.log(error);
       }
     );
   }
   submit():void{
-    console.log(this.form.value);
-    if(this.form.value.fio != null && this.form.value.phone != null && this.form.value.address != null){
-      this.addOrder(this.token, this.form.value.fio, this.form.value.phone, this.form.value.address)
+    if(this.form.value.fio != null && this.form.value.phone != null && this.form.value.address != null && this.form.value.email != null){
+      this.addOrder(this.token, this.form.value.fio, this.form.value.phone, this.form.value.address, this.form.value.email)
     }else{
-      console.log("error");
       this.message_error = "Fields must be printed"
     }
     
@@ -61,10 +60,8 @@ export class BinComponent implements OnInit {
   addElemOrder = (order:string, count:string, product:string) => {
     this.product.addElemOrder(order, count, product).subscribe(
       data => {
-        console.log(data);
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -95,7 +92,13 @@ plus(id:string):void{
   }
   localStorage.setItem('bin',JSON.stringify(this.product_list))
 }
+sendMessageToMail = (subject:string, text:string, email:string) => {
+  this.product.sendMessageToMail(subject, text, email).subscribe(
+    data => {
+    },
+    error => {
+    }
+  );
 }
-  
-
+}
   

@@ -24,12 +24,10 @@ export class LoginComponent implements OnInit {
   getTokenUser = (username:string, password:string) => {
     this.user.getTokenUser(username, password).subscribe(
       data => {
-        console.log(data);
         localStorage.setItem('my_token', data.auth_token);
         window.location.href = '';    
       },
       error => {
-        console.log(error);
         this.errors_username = error.error.username;
         this.errors_password = error.error.password;
       }
@@ -38,5 +36,4 @@ export class LoginComponent implements OnInit {
     login():void{
     this.getTokenUser(this.form.value.username, this.form.value.password);
   }
-
 }

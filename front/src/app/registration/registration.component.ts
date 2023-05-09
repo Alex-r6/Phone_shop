@@ -24,11 +24,9 @@ export class RegistrationComponent implements OnInit {
   getUserRegistration = (username:string, password:string, email:string) => {
     this.user.getUserRegistration(username, password, email).subscribe(
       data => {
-        console.log(data);
         window.location.href = '/login'
       },
       error => {
-        console.log(error);
         this.errors_username = error.error.username;
         this.errors_password = error.error.password;
         this.errors_email = error.error.email;        
@@ -39,5 +37,4 @@ export class RegistrationComponent implements OnInit {
       this.getUserRegistration(this.form.value.username, this.form.value.password, this.form.value.email);
       
     }
-
 }

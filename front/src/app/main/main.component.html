@@ -35,11 +35,11 @@
                   <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let item of list.results">
                     <div class="product-wrap mb-55">
                       <div class="product-img pro-theme-color-border product-border mb-25">
-                        <a href="product-details.html">
-                          <img *ngIf="item.img" src="{{baseurl}}/media/{{item.img}}" width="300px" height="200px">
+                        <a routerLink="/info/phone/{{item.id}}">
+                          <img *ngIf="item.img" src="{{baseurl}}/media/{{item.img}}" width="250px" height="200px">
                           <img *ngIf="item.img == null" src="assets/default_product.png" width="300px" height="200px">
                         </a>
-                        <span class="badge-green badge-right-20 badge-top-20 badge-ptb-1">NEW</span>
+                        <span *ngIf="item.new === true" class="badge-green badge-right-20 badge-top-20 badge-ptb-1">NEW</span>
                         <div class="product-action product-action-position-1 pro-action-theme-color">
                           <a title="Add to Cart" (click)="add_to_basket(item)"><i class="fa fa-cart-arrow-down"></i></a>
                           <a data-toggle="modal" data-target="#exampleModal" routerLink="/info/phone/{{item.id}}"><i
@@ -60,9 +60,6 @@
               </div>
               <div class="pro-pagination-style mt-30 text-center">
                 <ul>
-                  <!-- <li *ngIf="list.previous" class="page-item"><a class="page-link" (click)="prev()">Previous</a></li> -->
-                  <!-- <li class="page-item"><a class="page-link">{{page}}</a></li>
-                  <li *ngIf="list.next" class="page-item"><a class="page-link" (click)="next()">Next</a></li> -->
                     <li *ngIf="list.previous" class="page-item"><a class="page-link" (click)="prev()"><</a></li>
                     <li class="page-item"><a class="page-link">{{page}}</a></li>
                     <li *ngIf="list.next" class="page-item"><a class="page-link" (click)="next()">></a></li>
@@ -81,9 +78,9 @@
           </div>
           <div class="round-border-1 brand-logo-ptb">
             <div class="container">
-              <div class="row">
+              <div class="row" style="display:flex; justify-content: center;">
                 <div *ngFor="let item of logo_img">
-                  <img src="{{baseurl}}/media/{{item.img}}" alt="" height="150px">
+                  <img src="{{baseurl}}/media/{{item.img}}" height="150px">
                 </div>
               </div>
             </div>
@@ -96,7 +93,7 @@
             <div class="row">
               <div *ngFor="let item of banner" class="banner-wrap banner-zoom mb-30">
                 <div class="banner-img">
-                  <a href="product-details.html"><img src="{{baseurl}}/media/{{item.img}}"></a>
+                  <a href="product-details.html"><img src="{{baseurl}}/media/{{item.img}}" width="150px"></a>
                 </div>
               </div>
             </div>
@@ -106,13 +103,4 @@
     </div>
   </div>
 </div>
-
-<!-- <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li *ngIf="list.previous" class="page-item"><a class="page-link" (click)="prev()">Previous</a></li>
-    <li class="page-item"><a class="page-link">{{page}}</a></li>
-    <li *ngIf="list.next" class="page-item"><a class="page-link" (click)="next()">Next</a></li>
-  </ul>
-</nav> -->
-
-
+<app-footer></app-footer>
