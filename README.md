@@ -17,14 +17,14 @@ ___
 # Functionality
 * On the main page, you can view phone models, go to the detailed phone view page, and the search and filter functions by category are also implemented.
 
-![main](main.png)
+![main](readme_img/main.png)
 * On the detailed view page, you can view the characteristics of the phone, write a comment to the phone, watch a video about the phone, and also send the phone to the trash-bin.
-![bin](info_phone.png)
+![bin](readme_img/info_phone.png)
 * You can read news from the world of phones.
-![blog](blog.png)
+![blog](readme_img/blog.png)
 * On the cart page, you can place an order for goods. Empty the cart, change the quantity of goods.
-![bin](bin.png)
+![bin](readme_img/bin.png)
 * You can ask us your question.
-![faq](faq.png)
+![faq](readme_img/faq.png)
 * Також на проекті можна додавати змінювати товари  або робити інші маніпуцяції з даними за допомогою адмінки.Для цього на проекті реалізован Django Admin
-![admin](admin.png)
+![admin](readme_img/admin.png)
