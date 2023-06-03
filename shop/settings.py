@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o!=&hl^)cbu5l39ju1)ba1!r10u6^vogap=2%+=)@@j2ab%2mc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:4200",
     "http://127.0.0.1:8000",
@@ -167,3 +167,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'oorlov.1986@gmail.com'
 EMAIL_HOST_PASSWORD = 'istuzybsqekkutnr'
+
+TELEGRAM_BOT = {
+    "TOKEN": "5943300191:AAFDOk2XHIXu5prJ3_3cID1ZTXXZ2mBnHzk",
+    "WEBHOOK_URL": "https://3123-188-190-238-75.ngrok-free.app/telegram-bot/",
+}
