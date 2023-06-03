@@ -26,5 +26,5 @@ ___
 ![bin](readme_img/bin.png)
 * In FAQ section you can ask your questions.
 ![faq](readme_img/faq.png)
-* Project also allows to add/change goods, or perform other operations with data with the help of admin. For these purposes Django Admin is used.
+* Project also allows to add/change goods, or perform other operations with data with the help of Admin Panel. For these purposes Django Admin is used.
 ![admin](readme_img/admin.png)
