@@ -22,7 +22,7 @@ dispatcher = Dispatcher(
 # Handle start command
 
 
-dispatcher.add_handler(CommandHandler("start", start_handler))
-# dispatcher.add_handler(MessageHandler(filters=Filters.text, callback=main_offer))
-#
-# dispatcher.add_handler(CallbackQueryHandler(callback=check_menu))
+dispatcher.add_handler(CommandHandler("start", start_handler)),
+dispatcher.add_handler(MessageHandler(filters=Filters.text, callback=main_offer))
+
+dispatcher.add_handler(CallbackQueryHandler(callback=check_menu))

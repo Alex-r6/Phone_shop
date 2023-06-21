@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'app.order',
     'app.product',
     'app.user',
+    'app.telegram_bot',
 ]
 
 MIDDLEWARE = [
@@ -170,5 +171,5 @@ EMAIL_HOST_PASSWORD = 'istuzybsqekkutnr'
 
 TELEGRAM_BOT = {
     "TOKEN": "5943300191:AAFDOk2XHIXu5prJ3_3cID1ZTXXZ2mBnHzk",
-    "WEBHOOK_URL": "https://3123-188-190-238-75.ngrok-free.app/telegram-bot/",
+    "WEBHOOK_URL": "https://099d-188-190-238-75.ngrok-free.app/telegram-bot/",
 }
